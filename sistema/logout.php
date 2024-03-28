@@ -1,0 +1,1 @@
+<?php	ob_start();	session_start();	unset($_SESSION['conexao_session']);	unset($_SESSION['pagorigem']);	header("Expires: -1000");	header("cache-control: private");	header("pragma: no-cache");	header("Location: login.php");	ob_end_flush();?>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db name="cgbwidex" prefix="">
+	<ent id="1" name="usuarios">
+		<desc>This entity represents users</desc>
+		<attr id="101" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="102" name="cor" type="VARCHAR" length="10" nullable="true" />
+		<attr id="103" name="nome" type="VARCHAR" length="100" nullable="true" />
+		<attr id="104" name="login" type="VARCHAR" length="50" nullable="true" />
+		<attr id="105" name="senha" type="VARCHAR" length="100" nullable="true" />
+		<attr id="106" name="email" type="VARCHAR" length="100" nullable="true" />
+		<attr id="107" name="imagem" type="VARCHAR" length="100" nullable="true" />
+		<attr id="108" name="tipo" type="VARCHAR" length="50" nullable="true" />
+		<attr id="109" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="110" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="111" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="112" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="2" name="clientes">
+		<desc>This entity represents Costumers</desc>
+		<attr id="201" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="202" name="nome" type="VARCHAR" length="100" nullable="true" />
+		<attr id="203" name="email" type="VARCHAR" length="100" nullable="true" />
+		<attr id="204" name="documento" type="VARCHAR" length="20" nullable="true" />
+		<attr id="205" name="nascimento" type="DATE" length="20" nullable="true" />
+		<attr id="206" name="sexo" type="VARCHAR" length="10" nullable="true" />
+		<attr id="207" name="ativo" type="BOOLEAN" nullable="true" />
+		<attr id="206" name="falecido" type="VARCHAR" length="10" nullable="true" />
+		<attr id="207" name="profissao" type="VARCHAR" length="100" nullable="true" />
+		<attr id="208" name="responsavel" type="VARCHAR" length="100" nullable="true" />
+		<attr id="209" name="encaminhado" type="VARCHAR" length="100" nullable="true" />
+		<attr id="210" name="medico" type="VARCHAR" length="100" nullable="true" />
+		<attr id="211" name="observacoes" type="TEXT" nullable="true" />
+		<attr id="212" name="imagem" type="VARCHAR" length="100" nullable="true" />
+		<attr id="213" name="usuario_id" type="INT" nullable="true" />
+		<attr id="214" name="usuario" type="VARCHAR" length="100"  nullable="true" />
+		<attr id="215" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="216" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="217" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="3" name="empresa">
+		<desc>This entity represents Costumers</desc>
+		<attr id="301" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="302" name="nome" type="VARCHAR" length="100" nullable="true" />
+		<attr id="303" name="apelido" type="VARCHAR" length="50" nullable="true" />
+		<attr id="304" name="cidade" type="VARCHAR" length="50" nullable="true" />
+		<attr id="305" name="uf" type="VARCHAR" length="2" nullable="true" />
+		<attr id="306" name="cep" type="VARCHAR" length="20" nullable="true" />
+		<attr id="307" name="bairro" type="VARCHAR" length="50" nullable="true" />
+		<attr id="308" name="logradouro" type="VARCHAR" length="100" nullable="true" />
+		<attr id="309" name="numero" type="VARCHAR" length="10" nullable="true" />
+		<attr id="310" name="complemento" type="VARCHAR" length="50" nullable="true" />
+		<attr id="311" name="definicao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="312" name="rasao_social" type="VARCHAR" length="100" nullable="true" />
+		<attr id="313" name="nome_fantasia" type="VARCHAR" length="100" nullable="true" />
+		<attr id="314" name="fone" type="VARCHAR" length="20" nullable="true" />
+		<attr id="315" name="cnpj" type="VARCHAR" length="20" nullable="true" />
+		<attr id="316" name="inscricao_estadual" type="VARCHAR" length="20" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="4" name="telefones">
+		<desc>This entity represents Costumers</desc>
+		<attr id="401" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="402" name="cliente_id" type="INT" nullable="true" />
+		<attr id="403" name="tipo_telefone" type="INT" nullable="true" />
+		<attr id="404" name="operadora" type="INT" nullable="true" />
+		<attr id="405" name="telefone" type="VARCHAR" length="20" nullable="true" />
+		<attr id="406" name="principal" type="BOOLEAN" nullable="true" />
+		<attr id="407" name="recado" type="VARCHAR" length="50" nullable="true" />
+		<attr id="408" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="409" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="410" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="5" name="tipo_telefones">
+		<desc>This entity represents Costumers</desc>
+		<attr id="501" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="502" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="503" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="504" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="505" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="506" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="6" name="telefonicas">
+		<desc>This entity represents Costumers</desc>
+		<attr id="601" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="602" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="603" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="604" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="605" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="606" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="7" name="enderecos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="701" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="702" name="cliente_id" type="INT" nullable="true" />
+		<attr id="703" name="cep" type="VARCHAR" length="20" nullable="true" />
+		<attr id="704" name="uf" type="VARCHAR" length="2" nullable="true" />
+		<attr id="705" name="cidade" type="VARCHAR" length="191" nullable="true" />
+		<attr id="706" name="bairro" type="VARCHAR" length="100" nullable="true" />
+		<attr id="707" name="logradouro" type="VARCHAR" length="191" nullable="true" />
+		<attr id="708" name="numero" type="VARCHAR" length="20" nullable="true" />
+		<attr id="709" name="complemento" type="VARCHAR" length="50" nullable="true" />
+		<attr id="710" name="tipo_endereco_id" type="INT" nullable="true" />
+		<attr id="711" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="712" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="713" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="8" name="tipo_enderecos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="801" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="802" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="803" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="804" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="805" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="806" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="9" name="produtos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="901" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="902" name="nome_produto" type="VARCHAR" length="100" nullable="true" />
+		<attr id="903" name="barcode_produto" type="VARCHAR" length="100" nullable="true" />
+		<attr id="904" name="dsc_produto" type="VARCHAR" length="191" nullable="true" />
+		<attr id="903" name="vendaunit_produto" type="VARCHAR" length="100" nullable="true" />
+		<attr id="905" name="sst_produto" type="BOOLEAN" nullable="true" />
+		<attr id="906" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="907" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="908" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="9" name="tipo_produtos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="901" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="902" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="903" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="904" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="905" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="906" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="10" name="linha_produtos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="1001" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1002" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="1003" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="1004" name="tipo_produto_id" type="INT" nullable="true" />
+		<attr id="1005" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1006" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1007" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="11" name="modelo_produtos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="1101" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1102" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="1103" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="1104" name="tipo_produto_id" type="INT" nullable="true" />
+		<attr id="1105" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1106" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1107" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="12" name="unidade_produtos">
+		<desc>This entity represents Costumers</desc>
+		<attr id="1201" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1202" name="quantidade" type="INT" nullable="true" />
+		<attr id="1203" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="1204" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1205" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1206" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="13" name="estoque_produtos">
+		<desc>This entity represents Product Stock</desc>
+		<attr id="1301" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1302" name="produto_id" type="INT" nullable="true" />
+		<attr id="1303" name="usuario_id" type="INT" nullable="true" />
+		<attr id="1304" name="notafiscal" type="VARCHAR" length="25" nullable="true" />
+		<attr id="1305" name="notafiscal_dt" type="DATE" nullable="true" />
+		<attr id="1306" name="preco" type="DECIMAL" nullable="true" />
+		<attr id="1307" name="operacao" type="DECIMAL" nullable="true" />
+		<attr id="1308" name="quantidade" type="INT" nullable="true" />
+		<attr id="1309" name="saldo" type="INT" nullable="true" />
+		<attr id="1310" name="validade_dt" type="DATE" nullable="true" />
+		<attr id="1311" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1312" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1313" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="14" name="preco_produtos">
+		<desc>This entity represents Product Price</desc>
+		<attr id="1401" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1402" name="produto_id" type="INT" nullable="true" />
+		<attr id="1403" name="usuario_id" type="INT" nullable="true" />
+		<attr id="1404" name="preco" type="DECIMAL" nullable="true" />
+		<attr id="1405" name="ativo" type="DECIMAL" nullable="true" />
+		<attr id="1406" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1407" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1408" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="15" name="venda_produtos">
+		<desc>This entity represents Product Sale</desc>
+		<attr id="1501" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1502" name="cliente_id" type="INT" nullable="true" />
+		<attr id="1503" name="usuario_id" type="INT" nullable="true" />
+		<attr id="1504" name="notafiscal" type="VARCHAR" length="25" nullable="true" />
+		<attr id="1505" name="notafiscal_dt" type="DATE" nullable="true" />
+		<attr id="1506" name="ativo" type="DECIMAL" nullable="true" />
+		<attr id="1507" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1508" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1509" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="16" name="item_venda_produtos">
+		<desc>This entity represents Product Sale Item</desc>
+		<attr id="1601" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1602" name="venda_id" type="INT" nullable="true" />
+		<attr id="1603" name="produto_id" type="INT" nullable="true" />
+		<attr id="1604" name="codigo_aasi" type="VARCHAR" length="15" nullable="true" />
+		<attr id="1605" name="ouvido" type="VARCHAR" length="10" nullable="true" />
+		<attr id="1606" name="valor_unitario" type="DECIMAL" nullable="true" />
+		<attr id="1607" name="quantidade" type="INT" nullable="true" />
+		<attr id="1608" name="valor_total" type="DECIMAL" nullable="true" />
+		<attr id="1609" name="sst_aparelho" type="BOOLEAN" nullable="true" />
+		<attr id="1610" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1611" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1612" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="17" name="tipo_usuarios">
+		<desc>This entity represents Users Type</desc>
+		<attr id="1701" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1702" name="nome" type="VARCHAR" length="20" nullable="true" />
+		<attr id="1703" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="1704" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1705" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1706" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="18" name="consultas">
+		<desc>This entity represents Users Type</desc>
+		<attr id="1801" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1802" name="cliente_id" type="INT" nullable="true" />
+		<attr id="1803" name="consulta_id" type="INT" nullable="true" />
+		<attr id="1804" name="dt_consulta" type="DATE" length="20" nullable="true" />
+		<attr id="1805" name="observacoes" type="TEXT" nullable="true" />
+		<attr id="1806" name="fono_id" type="INT" nullable="true" />
+		<attr id="1807" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="1808" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1809" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1810" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="19" name="agendas">
+		<desc>This entity represents Users Type</desc>
+		<attr id="1901" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="1902" name="cor" type="VARCHAR" length="10" nullable="true" />
+		<attr id="1903" name="inicio" type="TIMESTAMP" nullable="true" />
+		<attr id="1904" name="termino" type="TIMESTAMP" nullable="true" />
+		<attr id="1905" name="fono_id" type="INT" nullable="true" />
+		<attr id="1906" name="secretaria_id" type="INT" nullable="true" />
+		<attr id="1907" name="cliente_id" type="INT" nullable="true" />
+		<attr id="1908" name="telefone" type="VARCHAR" length="20" nullable="true" />
+		<attr id="1909" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1910" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="1911" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="20" name="modelos">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2001" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2002" name="nome" type="VARCHAR" length="50"  nullable="true" />
+		<attr id="2003" name="tipo" type="VARCHAR" length="20"  nullable="true" />
+		<attr id="2004" name="pilha" type="VARCHAR" length="50"  nullable="true" />
+		<attr id="2005" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="2006" name="dt_cadastro" type="DATE" length="20" nullable="true" />
+		<attr id="2007" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2008" name="usuario" type="VARCHAR" length="100"  nullable="true" />
+		<attr id="2009" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2010" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2011" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="21" name="aparelhos">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2101" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2102" name="codigo" type="VARCHAR" length="50" nullable="true" />
+		<attr id="2103" name="modelo_id" type="INT" nullable="true" />
+		<attr id="2104" name="valor_compra" type="DECIMAL" nullable="true" />
+		<attr id="2105" name="valor_venda" type="DECIMAL" nullable="true" />
+		<attr id="2106" name="dt_fabricacao" type="DATE" length="20" nullable="true" />
+		<attr id="2107" name="tp_garantia" type="INT" nullable="true" />
+		<attr id="2108" name="nota_fiscal_entrada" type="VARCHAR" length="30"  nullable="true" />
+		<attr id="2109" name="nota_fiscal_saida" type="VARCHAR" length="30"  nullable="true" />
+		<attr id="2110" name="dt_saida" type="DATE" length="20" nullable="true" />
+		<attr id="2111" name="dt_entrada" type="DATE" length="20" nullable="true" />
+		<attr id="2112" name="cliente_id" type="INT" nullable="true" />
+		<attr id="2113" name="falecido" type="INT" nullable="true" />
+		<attr id="2114" name="venda_id" type="INT" nullable="true" />
+		<attr id="2115" name="lado" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2116" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2117" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2118" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2119" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2120" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+	<ent id="22" name="vendas">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2201" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2202" name="dt_venda" type="DATE" length="20" nullable="true" />
+		<attr id="2203" name="notafiscal_saida" type="VARCHAR" length="30"  nullable="true" />
+		<attr id="2204" name="pagto" type="VARCHAR" length="50" nullable="true"  />
+		<attr id="2205" name="parcelamento" type="VARCHAR" length="50" nullable="true"  />
+		<attr id="2206" name="cliente_id" type="INT" nullable="true" />
+		<attr id="2207" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2208" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2209" name="venda_fechada" type="BOOLEAN" nullable="true" />
+		<attr id="2210" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2211" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2212" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="23" name="audiometrias">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2301" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2302" name="cliente_id" type="INT" nullable="true" />
+		<attr id="2303" name="consulta_id" type="INT" nullable="true" />
+		<attr id="2204" name="dt_audiometria" type="DATE" length="20" nullable="true" />
+		<attr id="2305" name="nome_arquivo" type="TEXT" nullable="true" />
+		<attr id="2306" name="fono_id" type="INT" nullable="true" />
+		<attr id="2307" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2308" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2309" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2310" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="24" name="manutencoes">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2401" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2402" name="os" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2403" name="dt_manutencao" type="DATE" length="20" nullable="true" />
+		<attr id="2404" name="dt_retirada" type="DATE" length="20" nullable="true" />
+		<attr id="2405" name="codigo_atual" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2406" name="modelo_atual" type="VARCHAR" length="50" nullable="true" />
+		<attr id="2407" name="dt_venda" type="DATE" length="20" nullable="true" />
+		<attr id="2408" name="custo_servico" type="DECIMAL" nullable="true" />
+		<attr id="2409" name="garantia" type="INT" nullable="true" />
+		<attr id="2410" name="status" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2411" name="pagto" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2412" name="parcelamento" type="INT" nullable="true" />
+		<attr id="2413" name="garantia_conserto" type="INT" nullable="true" />
+		<attr id="2414" name="descricao" type="TEXT" nullable="true" />
+		<attr id="2415" name="aparelho_id" type="INT" nullable="true" />
+		<attr id="2416" name="cliente_id" type="INT" nullable="true" />
+		<attr id="2417" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2418" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2419" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2420" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2421" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="25" name="manutencao_produtos">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2501" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2502" name="descricao" type="VARCHAR" length="50" nullable="true" />
+		<attr id="2503" name="valor_custo" type="DECIMAL" nullable="true" />
+		<attr id="2504" name="valor_venda" type="DECIMAL" nullable="true" />
+		<attr id="2505" name="codigo_venda" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2506" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2507" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2508" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2509" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2510" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="26" name="manutencao_vendidos">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2601" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2602" name="manutencao_id" type="INT" nullable="true" />
+		<attr id="2603" name="produto_utilizado" type="VARCHAR" length="50" nullable="true"  />
+		<attr id="2604" name="valor_custo_utilizado" type="DECIMAL" nullable="true" />
+		<attr id="2605" name="valor_venda_utilizado" type="DECIMAL" nullable="true" />
+		<attr id="2606" name="manutencao_os" type="VARCHAR" length="20" nullable="true"  />
+		<attr id="2607" name="codigo_vendido" type="VARCHAR" length="20" nullable="true" />
+		<attr id="2608" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2609" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2610" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2611" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2612" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+	<ent id="27" name="vendas_parcelas">
+		<desc>This entity represents Users Type</desc>
+		<attr id="2701" name="id" type="INT" autoinc="true" nullable="false" />
+		<attr id="2702" name="parcela" type="INT" nullable="true" />
+		<attr id="2703" name="cliente_id" type="INT" nullable="true" />
+		<attr id="2704" name="venda_id" type="INT" nullable="true" />
+		<attr id="2705" name="dt_parcela" type="DATE" length="20" nullable="true" />
+		<attr id="2706" name="tipo" type="INT" nullable="true" />
+		<attr id="2707" name="situacao" type="BOOLEAN" nullable="true" />
+		<attr id="2708" name="valor_parcela" type="DECIMAL" nullable="true" />
+		<attr id="2709" name="forma" type="INT" nullable="true" />
+		<attr id="2710" name="usuario_id" type="INT" nullable="true" />
+		<attr id="2711" name="usuario" type="VARCHAR" length="100" nullable="true"  />
+		<attr id="2712" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2713" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="2714" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<pk>id</pk>
+	</ent>
+
+</db>
