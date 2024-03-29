@@ -6,17 +6,26 @@ session_start();
 require_once("../include/controller.php");
 $empresa = (new Empresa())->dataEmpresa();
 
-
 if (!($_SESSION['conexao_session']))
 {
     header("Location: login.php");
     exit();
 }
+/*
+if ($_SESSION['tp_usuario'] == "ADMIN")
+{
+    echo "usuario_tipo: ".$_SESSION['tp_usuario'];
+}else{
+    echo "usuario_tipo: ".$_SESSION['tp_usuario'];
+    echo "<br>vai sair pro login novamente";
+    //header("Location: login.php");
+    //exit();
+}
+*/
 
-$module = "principal";
+$module = "clientes";
 
-$_SESSION['pagorigem'] = "principal.php";
-unset($_SESSION['cliente_id']);
+$_SESSION['pagorigem'] = "clientes.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -96,32 +105,33 @@ unset($_SESSION['cliente_id']);
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Principal
+                Usu&aacute;rios
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                <li class="active"> Principal</li>
+                <li><a href="#">Administra&ccedil;&atilde;o</a></li>
+                <li class="active">Usuários</li>
             </ol>
         </section>
 
         <!-- Main content -->
         <section class="content">
-            <!-- Default box -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Página principal</h3>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <!-- /.box-header -->
+                        <div class="box-body">
+                        <?php
+                            $c = new Controller("clientes","list");
+                        ?>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
                 </div>
-                <div class="box-body">
-                    <img src="../img/sistema/logos/logo-sercom.png" width="540" height="600" class="img-responsive" alt="logo">
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                    Curitiba,
-                    <?php echo date('d/m/Y - H:i');?>
-                </div>
-                <!-- /.box-footer-->
+                <!-- /.col -->
             </div>
-            <!-- /.box -->
+            <!-- /.row -->
         </section>
         <!-- /.content -->
     </div>

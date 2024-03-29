@@ -21,22 +21,10 @@
 		<attr id="201" name="id" type="INT" autoinc="true" nullable="false" />
 		<attr id="202" name="nome" type="VARCHAR" length="100" nullable="true" />
 		<attr id="203" name="email" type="VARCHAR" length="100" nullable="true" />
-		<attr id="204" name="documento" type="VARCHAR" length="20" nullable="true" />
-		<attr id="205" name="nascimento" type="DATE" length="20" nullable="true" />
-		<attr id="206" name="sexo" type="VARCHAR" length="10" nullable="true" />
-		<attr id="207" name="ativo" type="BOOLEAN" nullable="true" />
-		<attr id="206" name="falecido" type="VARCHAR" length="10" nullable="true" />
-		<attr id="207" name="profissao" type="VARCHAR" length="100" nullable="true" />
-		<attr id="208" name="responsavel" type="VARCHAR" length="100" nullable="true" />
-		<attr id="209" name="encaminhado" type="VARCHAR" length="100" nullable="true" />
-		<attr id="210" name="medico" type="VARCHAR" length="100" nullable="true" />
-		<attr id="211" name="observacoes" type="TEXT" nullable="true" />
-		<attr id="212" name="imagem" type="VARCHAR" length="100" nullable="true" />
-		<attr id="213" name="usuario_id" type="INT" nullable="true" />
-		<attr id="214" name="usuario" type="VARCHAR" length="100"  nullable="true" />
-		<attr id="215" name="created_at" type="TIMESTAMP" nullable="true" />
-		<attr id="216" name="updated_at" type="TIMESTAMP" nullable="true" />
-		<attr id="217" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<attr id="204" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="205" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="206" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="207" name="deleted_at" type="TIMESTAMP" nullable="true" />
 		<pk>id</pk>
 	</ent>
 	<ent id="3" name="empresa">

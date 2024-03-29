@@ -32,6 +32,13 @@ if(!isset($submodule)){
                     <li <?php if ($module == "usuarios") {?>class="active"<?php } ?>><a href="admin.php"><i class="fa fa-circle-o"></i> Usu&aacute;rios</a></li>
                 </ul>
             </li>
+            <li class="treeview <?php if (($module == "clientes")||($module == "clientes")) {?>active<?php } ?>">
+                <a href="#">
+                    <i class="fa fa-user"></i> <span>Clientes</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+                <ul class="treeview-menu">
+                    <li <?php if ($module == "clientes") {?>class="active"<?php } ?>><a href="clientes.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
+                </ul>
+            </li>
             <?php } ?>
             <li class="treeview <?php echo $module == "relatorios" ? 'active' : '' ?>">
                 <a href="#"><i class="fa fa-user"></i> <span>Relatórios</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
