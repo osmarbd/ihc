@@ -20,7 +20,7 @@ class Config{
 			$database = "template";			
 			$host = "localhost";			
 			$dbuser = "root";			
-			$dbpassword = "!";		
+			$dbpassword = "";		
 			$dbport = 3306;
 		}elseif($ambiente == 2){            
 			$database = "";            
