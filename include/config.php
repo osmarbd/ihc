@@ -13,14 +13,14 @@ class Config{
 			$database = "template";
 			$host = "localhost";			
 			$dbuser = "root";			
-			$dbpassword = "obtz76";
+			$dbpassword = "";
 			$dbport = 3307;
 		}elseif($ambiente == 1){ 
 			// Note			
 			$database = "template";			
 			$host = "localhost";			
 			$dbuser = "root";			
-			$dbpassword = "pwd1234!";		
+			$dbpassword = "!";		
 			$dbport = 3306;
 		}elseif($ambiente == 2){            
 			$database = "";            
