@@ -1,7 +1,28 @@
-﻿# Host: localhost  (Version 5.5.5-10.3.9-MariaDB)
-# Date: 2018-12-16 21:28:04
+﻿# Host: localhost:3307  (Version 5.7.23-log)
+# Date: 2024-04-04 19:26:34
 # Generator: MySQL-Front 6.0  (Build 2.20)
 
+
+#
+# Structure for table "clientes"
+#
+
+CREATE TABLE `clientes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) NOT NULL DEFAULT '0',
+  `email` varchar(100) DEFAULT NULL,
+  `stt` tinyint(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+#
+# Data for table "clientes"
+#
+
+INSERT INTO `clientes` VALUES (1,'Pedro','pedro@gmail.com',1,'2024-03-28 21:46:01','2024-03-28 21:46:01',NULL),(2,'carlos','carlos@gmail.com',1,'2024-03-28 22:13:00','2024-03-28 22:13:00',NULL),(3,'teste2','teste2@email.com',1,'2024-04-04 19:22:59','2024-04-04 19:22:59',NULL);
 
 #
 # Structure for table "tipo_usuarios"
@@ -15,7 +36,7 @@ CREATE TABLE `tipo_usuarios` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=COMPACT;
 
 #
 # Data for table "tipo_usuarios"
@@ -37,16 +58,17 @@ CREATE TABLE `usuarios` (
   `imagem` varchar(100) DEFAULT 'default.jpg',
   `tipo` varchar(50) DEFAULT NULL,
   `stt` tinyint(1) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 #
 # Data for table "usuarios"
 #
 
 INSERT INTO `usuarios` VALUES 
-(1,'#000000','JON DOE','JONDOE','2a8b3e7bbf723b52857cb9c230729ffb','jondoe@gmail.com','default.jpg','ADMIN',1,'2017-09-30 16:06:41','2018-07-20 17:22:06',NULL),
-;
+(1,NULL,'JON DOE','JONDOE','e10adc3949ba59abbe56e057f20f883e','jdoe@gmail.com','default.png','ADMIN',1,'2017-09-30 16:06:41','2019-02-26 16:24:49',NULL);
+
+# a senha é 123456 
