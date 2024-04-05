@@ -1,5 +1,5 @@
 <?php
-	Class ClientesDAO {
+	Class TelefonesDAO {
 	
 		public function login($param)
 		{
@@ -63,7 +63,7 @@
             $userArr = null;
 			$flag = 0;
 			$fields = "";
-			$admin = new ClientesVO();
+			$admin = new TelefonesVO();
 			
 			foreach(array_keys($admin->fields) as $field){
 				if ($flag == 0) {
@@ -85,7 +85,7 @@
 			$objdb->dbQuery();
 			if ($objdb->numRows > 0) {
 				for ($j = 0; $j < $objdb->numRows; $j++) {
-					$admin_aux = new ClientesVO();
+					$admin_aux = new TelefonesVO();
 					$array = $objdb->fetchArray();
 					foreach(array_keys($admin->fields) as $field){
 						$str = "set_".$field;
@@ -104,7 +104,7 @@
 		function verifyLogin($param)
 		{
 			global $objdb;
-			$admin = new ClientesVO();
+			$admin = new TelefonesVO();
 			$a_total = 0;
 			
 			$query = "SELECT COUNT(*) FROM ".$admin->table." WHERE login='".$param."'";
@@ -151,7 +151,7 @@
 			$inspt = join( ", ", $values);
 			
 			$query = "INSERT INTO ".$admin->table." ($fields) VALUES ($inspt);";
-			//echo $query;
+			//echo "<br>$query<br>";
 			//exit;
 			$objdb->set_sql($query);
 			$result = $objdb->dbQuery();
@@ -202,7 +202,7 @@
 			}			
 			$query = "SELECT ".$fields." FROM ".$admin->table." WHERE ".$admin->pkfield." = ".$admin->get_id();
 
-			echo "<br>$query<br>";
+			//print_r($query);
 
 			$objdb->set_sql($query);
 			$objdb->dbQuery();

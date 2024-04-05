@@ -1,23 +1,28 @@
 <?php
-	Class ClientesModel {
+	Class TelefonesModel {
 	
 		public function login($param) {
-			return (new ClientesDAO)->login($param);
+			return (new TelefonesDAO)->login($param);
 		}
 		
 		public function showList() {
 			
-			$obj = (new ClientesDAO)->loadAll("nome");
+			$obj = (new TelefonesDAO)->loadAll("telefone");
+            if(empty($obj)){
+                $end = 0;
+            }else{
+                // CALCULA O NUMERO DE ELEMENTOS DO ARRAY
+			    $end = count($obj);
+            }
 			
-			// CALCULA O NUMERO DE ELEMENTOS DO ARRAY
-			$end = count($obj);
+			
             echo "<table id='tabela1' class='table table-bordered table-striped'>";
             echo "<thead>";
             echo "<tr>";
-            echo "<th>Nome</th>";
-            echo "<th>Email</th>";       
+            echo "<th>DDD</th>";
+            echo "<th>Telefone</th>";       
             echo "<th data-orderable='false'>";
-            echo "<a href=clientesins.php><span class='glyphicon glyphicon-plus fa-lg' title='Inserir' alt='Inserir'></span></a></th>";
+            echo "<a href=telefonesins.php><span class='glyphicon glyphicon-plus fa-lg' title='Inserir' alt='Inserir'></span></a></th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
@@ -26,11 +31,11 @@
 
 				$objstr = new UtilString();				
 
-                $str_nome = $obj[$i]->get_nome();
+                $str_ddd = $obj[$i]->get_ddd();
                 //$objstr->str = $str_nome;
                 //$str_nome = $objstr->formatString(0);
 
-                $str_email = $obj[$i]->get_email();
+                $str_telefone = $obj[$i]->get_telefone();
                 //$objstr->str = $str_email;
                 //$str_email = $objstr->formatString(0);               
 
@@ -39,13 +44,13 @@
 				
 
                 echo "<tr>";
-                echo "<td>".$str_nome."</td>";
-                echo "<td>".$str_email."</td>";             
+                echo "<td>".$str_ddd."</td>";
+                echo "<td>".$str_telefone."</td>";             
                 echo "<td>";
-                echo "<a href=clientesalt.php?cod=".$obj[$i]->get_id().">";
+                echo "<a href=telefonesalt.php?cod=".$obj[$i]->get_id().">";
                 echo "<span class='glyphicon glyphicon-edit fa-lg' title='Alterar' alt='Alterar'></span></a>&nbsp;";
-                echo "<a href=clientesshw.php?cod=".$obj[$i]->get_id().">";
-                echo "<span class='glyphicon glyphicon-eye-open fa-lg' title='Mostrar' alt='Mostrar'></span></a>&nbsp;";
+                //echo "<a href=adminexec.php?cod=".$obj[$i]->get_id().">";
+                //echo "<span class='glyphicon glyphicon-remove fa-lg' title='Excluir' alt='Excluir'></span></a>&nbsp;";
                 if ($stt == "0") {
                     echo "<a href=clientesaltstt.php?cod=".$obj[$i]->get_id()."&stt=1>";
                     echo "<span class='glyphicon glyphicon-ok-circle fa-lg' title='Ativar' alt='Ativar'></span></a>";
@@ -60,8 +65,8 @@
             echo "</tbody>";
             echo "<tfoot>";
             echo "<tr>";
-            echo "<th>Nome</th>";
-            echo "<th>Email</th>";        
+            echo "<th>DDD</th>";
+            echo "<th>Telefone</th>";        
             echo "<th>&nbsp;</th>";
             echo "</tr>";
             echo "</tfoot>";
@@ -70,42 +75,42 @@
 		}
 		
 		public function verifyLogin($param) {
-			return (new ClientesDAO)->verifyLogin($param);
+			return (new TelefonesDAO)->verifyLogin($param);
 		}
 		
 		public function insert($param) {
-			return (new ClientesDAO)->insert($param);
+			return (new TelefonesDAO)->insert($param);
 		}
 		
 		public function load($param) {
-			$obj = (new ClientesDAO)->load($param);
+			$obj = (new TelefonesDAO)->load($param);
 			return $obj;
 		}
 		
 		public function updatePwd($param) {
-			return (new ClientesDAO)->updatePwd($param);
+			return (new TelefonesDAO)->updatePwd($param);
 		}
 
         public function update($param) {
-            return (new ClientesDAO)->update($param);
+            return (new TelefonesDAO)->update($param);
         }
 
         public function updateImage($param) {
-            return (new ClientesDAO)->updateImage($param);
+            return (new TelefonesDAO)->updateImage($param);
         }
 		
 		public function delete($param) {
-			return (new ClientesDAO)->delete($param);
+			return (new TelefonesDAO)->delete($param);
 		}
 		
 		public function updateStt($param) {
-			return (new ClientesDAO)->updateStt($param);
+			return (new TelefonesDAO)->updateStt($param);
 		}
 
         public static function combo($param, $css = null, $where = null, $name = null) {
 		    //print_r($where);
 
-            $obj = (new ClientesDAO)->loadAll("nome", $where);
+            $obj = (new TelefonesDAO)->loadAll("nome", $where);
 
             // CALCULA O NÚMERO DE ELEMENTOS DO ARRAY
 

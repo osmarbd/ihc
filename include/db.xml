@@ -50,15 +50,14 @@
 	<ent id="4" name="telefones">
 		<desc>This entity represents Costumers</desc>
 		<attr id="401" name="id" type="INT" autoinc="true" nullable="false" />
-		<attr id="402" name="cliente_id" type="INT" nullable="true" />
-		<attr id="403" name="tipo_telefone" type="INT" nullable="true" />
-		<attr id="404" name="operadora" type="INT" nullable="true" />
-		<attr id="405" name="telefone" type="VARCHAR" length="20" nullable="true" />
-		<attr id="406" name="principal" type="BOOLEAN" nullable="true" />
-		<attr id="407" name="recado" type="VARCHAR" length="50" nullable="true" />
-		<attr id="408" name="created_at" type="TIMESTAMP" nullable="true" />
-		<attr id="409" name="updated_at" type="TIMESTAMP" nullable="true" />
-		<attr id="410" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<attr id="402" name="telefone" type="VARCHAR" length="15" nullable="true" />
+		<attr id="403" name="ddd" type="VARCHAR" length="2" nullable="true" />
+		<attr id="404" name="stt" type="BOOLEAN" nullable="true" />
+		<attr id="405" name="principal" type="BOOLEAN" nullable="true" />
+		<attr id="406" name="created_at" type="TIMESTAMP" nullable="true" />
+		<attr id="407" name="updated_at" type="TIMESTAMP" nullable="true" />
+		<attr id="408" name="deleted_at" type="TIMESTAMP" nullable="true" />
+		<attr id="409" name="cliente_id" type="INT" nullable="true" />
 		<pk>id</pk>
 	</ent>
 	<ent id="5" name="tipo_telefones">

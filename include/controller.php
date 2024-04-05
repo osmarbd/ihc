@@ -126,6 +126,44 @@ Class Controller
                             break;
                     };
                     break;
+
+                    case "telefones":
+                        switch ($action) {
+                            case "login":
+                                //$this->obj = (new ClientesModel)->login($param);
+                                break;
+                            case "list":
+                                $this->obj = (new TelefonesModel)->showList();
+                                break;
+                            case "verifyLogin":
+                                //$this->obj = (new ClientesModel)->verifyLogin($param);
+                                break;
+                            case "insert":
+                                return (new TelefonesModel)->insert($param);
+                                break;
+                            case "load":
+                                //$this->obj = (new ClientesModel)->load($param);
+                                break;
+                            case "update":
+                                //$this->obj = (new ClientesModel)->update($param);
+                                break;
+                            case "updatePwd":
+                                //$this->obj = (new ClientesModel)->updatePwd($param);
+                                break;
+                            case "delete":
+                                //return (new ClientesModel)->delete($param);
+                                break;
+                            case "updateStt":
+                                //$this->obj = (new ClientesModel)->updateStt($param);
+                                break;
+                            case "combo":
+                                //$this->obj = (new ClientesModel())->combo($param, $css, $where, $name);
+                                break;
+                            case "updateImage":
+                                //$this->obj = (new ClientesModel)->updateImage($param);
+                                break;
+                        };
+                        break;
 		}
    	}
 
